@@ -1,0 +1,61 @@
+/*
+ * Notes rich-text editor styling. Scoped to `.notes-editor` so Quill's default
+ * chrome is re-skinned with the workspace design tokens instead of its own
+ * palette. Imported by RichTextEditor.tsx.
+ */
+
+.notes-editor .ql-toolbar.ql-snow {
+  border: 0;
+  border-bottom: 1px solid oklch(var(--border));
+  background-color: oklch(var(--muted) / 0.4);
+  padding: 8px 10px;
+}
+
+.notes-editor .ql-container.ql-snow {
+  border: 0;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+}
+
+.notes-editor .ql-editor {
+  min-height: 12rem;
+  color: oklch(var(--foreground));
+  line-height: 1.6;
+}
+
+.notes-editor .ql-editor.ql-blank::before {
+  color: oklch(var(--muted-foreground));
+  font-style: normal;
+}
+
+.notes-editor .ql-snow .ql-stroke {
+  stroke: oklch(var(--muted-foreground));
+}
+
+.notes-editor .ql-snow .ql-fill {
+  fill: oklch(var(--muted-foreground));
+}
+
+.notes-editor .ql-snow .ql-picker {
+  color: oklch(var(--muted-foreground));
+}
+
+.notes-editor .ql-snow .ql-picker-options {
+  background-color: oklch(var(--popover));
+  border-color: oklch(var(--border));
+}
+
+.notes-editor .ql-snow .ql-active .ql-stroke,
+.notes-editor .ql-snow button:hover .ql-stroke {
+  stroke: oklch(var(--primary));
+}
+
+.notes-editor .ql-snow .ql-active .ql-fill,
+.notes-editor .ql-snow button:hover .ql-fill {
+  fill: oklch(var(--primary));
+}
+
+.notes-editor .ql-editor a {
+  color: oklch(var(--primary));
+  text-decoration: underline;
+}

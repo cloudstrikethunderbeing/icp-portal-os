@@ -1,0 +1,368 @@
+type _ImmutableObjectStorageRefillResult = 
+ record {
+   success: opt bool;
+   topped_up_amount: opt nat;
+ };
+type _ImmutableObjectStorageRefillInformation = record {
+                                                  proposed_top_up_amount:
+                                                   opt nat;};
+type _ImmutableObjectStorageCreateCertificateResult = 
+ record {
+   blob_hash: text;
+   method: text;
+ };
+type Value = 
+ variant {
+   "bool": bool;
+   float: float64;
+   "int": int;
+   "nat": nat;
+   "null";
+   "text": text;
+ };
+type UserSettings = 
+ record {
+   gridSize: nat;
+   reduceMotion: bool;
+   theme: text;
+   updatedAt: Timestamp;
+   wallpaper: text;
+   wallpaperEnabled: bool;
+ };
+type UserRole = 
+ variant {
+   admin;
+   guest;
+   user;
+ };
+type UserId = principal;
+type Timestamp = int;
+type StorageSection = 
+ variant {
+   icpCloud;
+   local;
+ };
+type SortOrder = 
+ variant {
+   asc;
+   desc;
+ };
+type SortKey = 
+ variant {
+   createdAt;
+   name;
+   size;
+   updatedAt;
+ };
+type Shortcut = 
+ record {
+   createdAt: Timestamp;
+   favourite: bool;
+   folderId: opt Id;
+   icon: text;
+   id: Id;
+   launchType: LaunchType;
+   name: text;
+   position: nat;
+   url: text;
+ };
+type Result__1 = 
+ variant {
+   err: Error;
+   ok;
+ };
+type Result = 
+ record {
+   hasMore: bool;
+   rows: vec vec Cell;
+ };
+type ReportStatus = 
+ variant {
+   closed;
+   inProgress;
+   open;
+   resolved;
+ };
+type NoteFolder = 
+ record {
+   createdAt: Timestamp;
+   id: Id;
+   name: text;
+   updatedAt: Timestamp;
+ };
+type Note = 
+ record {
+   attachments: vec FileRef;
+   body: text;
+   createdAt: Timestamp;
+   folderId: opt Id;
+   id: Id;
+   pinned: bool;
+   title: text;
+   updatedAt: Timestamp;
+ };
+type NewBugReport = record {description: text;};
+type ListingItem = 
+ variant {
+   file: FileEntry;
+   folder: Folder;
+ };
+type LaunchType = 
+ variant {
+   comingSoon;
+   externalWeb;
+   icpService;
+   native;
+ };
+type InstalledApp = 
+ record {
+   appId: Id;
+   favourite: bool;
+   folderId: opt Id;
+   id: Id;
+   installedAt: Timestamp;
+   position: nat;
+ };
+type Id = nat;
+type HomeItem = 
+ variant {
+   app: InstalledApp;
+   folder: HomeFolder;
+ };
+type HomeFolder = 
+ record {
+   createdAt: Timestamp;
+   id: Id;
+   name: text;
+   position: nat;
+ };
+type Folder = 
+ record {
+   createdAt: Timestamp;
+   id: Id;
+   name: text;
+   parentId: opt Id;
+   section: StorageSection;
+   updatedAt: Timestamp;
+ };
+type FileRef = 
+ record {
+   "blob": ExternalBlob;
+   filename: text;
+   mimeType: opt text;
+   sizeBytes: opt nat;
+ };
+type FileEntry = 
+ record {
+   createdAt: Timestamp;
+   id: Id;
+   name: text;
+   parentId: opt Id;
+   ref: FileRef;
+   section: StorageSection;
+   updatedAt: Timestamp;
+ };
+type ExternalBlob = blob;
+type Error = 
+ variant {
+   AmbiguousAttribute: record {
+                         field: text;
+                         sources: vec text;
+                       };
+   FrontendOriginMismatch: record {
+                             expected: vec text;
+                             got: text;
+                           };
+   FrontendOriginsNotConfigured;
+   MalformedCandid;
+   MissingField: text;
+   MixedSsoSources: record {
+                      otherKeys: vec text;
+                      ssoKeys: vec text;
+                    };
+   NoAttributes;
+   Stale: record {ageNs: nat;};
+   UnknownNonce;
+   UntrustedSsoSource: record {domain: text;};
+ };
+type Dock = record {appIds: vec Id;};
+type DirectoryEntry = 
+ record {
+   app: AppRegistryEntry;
+   availability: Availability;
+   favourite: bool;
+   installed: bool;
+ };
+type Cell = 
+ record {
+   name: text;
+   value: Value;
+ };
+type CalcEntry = 
+ record {
+   createdAt: Timestamp;
+   expression: text;
+   id: Id;
+   result: text;
+ };
+type BugReport = 
+ record {
+   category: opt text;
+   createdAt: Timestamp;
+   description: text;
+   id: Id;
+   reporter: UserId;
+   status: ReportStatus;
+   summary: opt text;
+   updatedAt: Timestamp;
+ };
+type Availability = 
+ variant {
+   available;
+   comingSoon;
+   installed;
+ };
+type AppRegistryEntry = 
+ record {
+   canisterId: opt text;
+   category: AppCategory;
+   description: text;
+   icon: text;
+   id: Id;
+   launchType: LaunchType;
+   name: text;
+   permissions: vec text;
+   requiresAuth: bool;
+   url: text;
+   version: text;
+ };
+type AppCategory = 
+ variant {
+   ai;
+   business;
+   developer;
+   finance;
+   gaming;
+   governance;
+   media;
+   other;
+   productivity;
+   social;
+ };
+service : {
+  _immutableObjectStorageBlobsAreLive: (hashes: vec blob) -> (vec bool) query;
+  _immutableObjectStorageBlobsToDelete: () -> (vec blob) query;
+  _immutableObjectStorageConfirmBlobDeletion: (blobs: vec blob) -> ();
+  _immutableObjectStorageCreateCertificate: (blobHash: text) ->
+   (_ImmutableObjectStorageCreateCertificateResult);
+  _immutableObjectStorageRefillCashier: (refillInformation:
+   opt _ImmutableObjectStorageRefillInformation) ->
+   (_ImmutableObjectStorageRefillResult);
+  _immutableObjectStorageUpdateGatewayPrincipals: () -> ();
+  _initialize_access_control: () -> ();
+  _internet_identity_sign_in_finish: () -> (Result__1);
+  _internet_identity_sign_in_start: () -> (blob);
+  addCalcEntry: (expression: text, result: text) -> (CalcEntry);
+  addFile: (name: text, parentId: opt nat, section: StorageSection, ref:
+   FileRef) -> (FileEntry);
+  addNoteAttachment: (id: nat, ref: FileRef) -> (opt Note);
+  /// Add a registered app to the caller's home screen. Returns the updated
+  /// entry, or `null` when the app is not registered.
+  addToHomeScreen: (appId: nat) -> (opt DirectoryEntry);
+  assignCallerUserRole: (user: principal, role: UserRole) -> ();
+  clearCalcHistory: () -> ();
+  copyFile: (id: nat, parentId: opt nat) -> (opt FileEntry);
+  createFolder: (name: text, parentId: opt nat, section: StorageSection) ->
+   (Folder);
+  createHomeFolder: (name: text) -> (HomeFolder);
+  createNote: (title: text, body: text, folderId: opt nat) -> (Note);
+  createNoteFolder: (name: text) -> (NoteFolder);
+  /// Create a personal shortcut or website link on the caller's home screen.
+  createShortcut: (name: text, url: text, icon: text, launchType:
+   LaunchType) -> (Shortcut);
+  deleteFile: (id: nat) -> (bool);
+  deleteFolder: (id: nat) -> (bool);
+  deleteHomeFolder: (id: nat) -> (bool);
+  deleteNote: (id: nat) -> (bool);
+  deleteNoteFolder: (id: nat) -> (bool);
+  execute: (qJson: text) -> (Result) query;
+  getApiDoc: () -> (text) query;
+  getAppRegistryEntry: (id: nat) -> (opt AppRegistryEntry) query;
+  /// Read a single report. Admin only.
+  getBugReport: (id: nat) -> (opt BugReport) query;
+  getCallerUserRole: () -> (UserRole) query;
+  /// A single directory entry, or `null` when the app is not registered.
+  getDirectoryEntry: (appId: nat) -> (opt DirectoryEntry) query;
+  getDock: () -> (Dock) query;
+  getNote: (id: nat) -> (opt Note) query;
+  getSettings: () -> (UserSettings) query;
+  installApp: (appId: nat) -> (opt InstalledApp);
+  isCallerAdmin: () -> (bool) query;
+  listAppRegistry: () -> (vec AppRegistryEntry) query;
+  /// List every report in the workspace inbox, newest first. Admin only.
+  listBugReports: () -> (vec BugReport) query;
+  listCalcHistory: () -> (vec CalcEntry) query;
+  /// Browse the whole directory, optionally filtered by category.
+  listDirectory: (category: opt AppCategory) -> (vec DirectoryEntry) query;
+  /// The caller's favourited directory apps.
+  listFavourites: () -> (vec DirectoryEntry) query;
+  listFolder: (parentId: opt nat, section: StorageSection) ->
+   (vec ListingItem) query;
+  listHomeItems: () -> (vec HomeItem) query;
+  listInstalledApps: () -> (vec InstalledApp) query;
+  listNoteFolders: () -> (vec NoteFolder) query;
+  listNotes: (folderId: opt nat) -> (vec Note) query;
+  /// The caller's own personal shortcuts and website links.
+  listShortcuts: () -> (vec Shortcut) query;
+  moveAppToFolder: (installedId: nat, folderId: opt nat) ->
+   (opt InstalledApp);
+  moveFile: (id: nat, parentId: opt nat) -> (opt FileEntry);
+  moveFolder: (id: nat, parentId: opt nat) -> (opt Folder);
+  /// Move one of the caller's own shortcuts into a home folder, or back to the
+  /// home screen when `folderId` is `null`.
+  moveShortcutToFolder: (id: nat, folderId: opt nat) -> (opt Shortcut);
+  removeNoteAttachment: (id: nat, index: nat) -> (opt Note);
+  /// Remove one of the caller's own shortcuts.
+  removeShortcut: (id: nat) -> (bool);
+  renameFile: (id: nat, name: text) -> (opt FileEntry);
+  renameFolder: (id: nat, name: text) -> (opt Folder);
+  renameHomeFolder: (id: nat, name: text) -> (opt HomeFolder);
+  renameNoteFolder: (id: nat, name: text) -> (opt NoteFolder);
+  /// Rename one of the caller's own shortcuts.
+  renameShortcut: (id: nat, name: text) -> (opt Shortcut);
+  reorderApps: (orderedIds: vec nat) -> (vec InstalledApp);
+  schema: () -> (text) query;
+  /// Search the directory by name or description (case-insensitive).
+  searchDirectory: (term: text) -> (vec DirectoryEntry) query;
+  searchFiles: (term: text) -> (vec ListingItem) query;
+  searchNotes: (term: text) -> (vec Note) query;
+  setAppFavourite: (installedId: nat, favourite: bool) -> (opt InstalledApp);
+  /// Attach an optional AI category and/or summary to a report. Admin only.
+  /// Reporting and reading work fully when no AI result is present.
+  setBugReportAiResult: (id: nat, category: opt text, summary: opt text) ->
+   (opt BugReport);
+  /// Change a report's status; the backend records the last-updated timestamp.
+  /// Admin only.
+  setBugReportStatus: (id: nat, status: ReportStatus) -> (opt BugReport);
+  /// Favourite or unfavourite a registered app. Returns the updated entry, or
+  /// `null` when the app is not registered.
+  setDirectoryFavourite: (appId: nat, favourite: bool) ->
+   (opt DirectoryEntry);
+  setDock: (appIds: vec nat) -> (Dock);
+  setNotePinned: (id: nat, pinned: bool) -> (opt Note);
+  /// Favourite or unfavourite one of the caller's own shortcuts.
+  setShortcutFavourite: (id: nat, favourite: bool) -> (opt Shortcut);
+  /// Change the icon of one of the caller's own shortcuts.
+  setShortcutIcon: (id: nat, icon: text) -> (opt Shortcut);
+  /// Change the target URL of one of the caller's own shortcuts.
+  setShortcutUrl: (id: nat, url: text) -> (opt Shortcut);
+  sortFolder: (parentId: opt nat, section: StorageSection, key: SortKey,
+   order: SortOrder) -> (vec ListingItem) query;
+  /// Submit a bug report. Any signed-in user may call this; the backend
+  /// captures the reporter principal and the submission timestamp.
+  submitBugReport: (input: NewBugReport) -> (BugReport);
+  uninstallApp: (installedId: nat) -> (bool);
+  updateNote: (id: nat, title: text, body: text, folderId: opt nat) ->
+   (opt Note);
+  updateSettings: (settings: UserSettings) -> (UserSettings);
+}

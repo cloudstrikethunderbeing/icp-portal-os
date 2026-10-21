@@ -1,0 +1,1048 @@
+// Version: 4.0.0
+type AccessControlState__201339279 =
+  {
+    var adminAssigned : Bool;
+    userRoles : Map__230067015<Principal, UserRole__91647283>
+  };
+type AppCategory__146131558 =
+  {
+    #ai;
+    #business;
+    #developer;
+    #finance;
+    #gaming;
+    #governance;
+    #media;
+    #other;
+    #productivity;
+    #social
+  };
+type AppCategory__152961284 =
+  {
+    #ai;
+    #business;
+    #developer;
+    #finance;
+    #gaming;
+    #governance;
+    #media;
+    #other;
+    #productivity;
+    #social
+  };
+type AppCategory__652953406 =
+  {
+    #ai;
+    #business;
+    #developer;
+    #finance;
+    #gaming;
+    #governance;
+    #media;
+    #other;
+    #productivity;
+    #social
+  };
+type AppCategory__695302933 =
+  {
+    #ai;
+    #business;
+    #developer;
+    #finance;
+    #gaming;
+    #governance;
+    #media;
+    #other;
+    #productivity;
+    #social
+  };
+type AppCategory__738154909 =
+  {
+    #ai;
+    #business;
+    #developer;
+    #finance;
+    #gaming;
+    #governance;
+    #media;
+    #other;
+    #productivity;
+    #social
+  };
+type AppCategory__98021410 =
+  {
+    #ai;
+    #business;
+    #developer;
+    #finance;
+    #gaming;
+    #governance;
+    #media;
+    #other;
+    #productivity;
+    #social
+  };
+type AppRegistryEntry__1026376198 =
+  {
+    canisterId : ?Text;
+    category : AppCategory__152961284;
+    description : Text;
+    icon : Text;
+    id : Id__197737761;
+    launchType : LaunchType__363961932;
+    name : Text;
+    permissions : [Text];
+    requiresAuth : Bool;
+    url : Text;
+    version : Text
+  };
+type AppRegistryEntry__266468038 =
+  {
+    canisterId : ?Text;
+    category : AppCategory__695302933;
+    description : Text;
+    icon : Text;
+    id : Nat;
+    launchType : LaunchType__328084765;
+    name : Text;
+    permissions : [Text];
+    requiresAuth : Bool;
+    url : Text;
+    version : Text
+  };
+type AppRegistryEntry__283610041 = AppRegistryEntry__1026376198;
+type AppRegistryEntry__334738331 =
+  {
+    canisterId : ?Text;
+    category : AppCategory__98021410;
+    description : Text;
+    icon : Text;
+    id : Nat;
+    launchType : LaunchType__70010692;
+    name : Text;
+    permissions : [Text];
+    requiresAuth : Bool;
+    url : Text;
+    version : Text
+  };
+type AppRegistryEntry__496593975 =
+  {
+    canisterId : ?Text;
+    category : AppCategory__738154909;
+    description : Text;
+    icon : Text;
+    id : Nat;
+    launchType : LaunchType__564544967;
+    name : Text;
+    permissions : [Text];
+    requiresAuth : Bool;
+    url : Text;
+    version : Text
+  };
+type AppRegistryEntry__561136378 =
+  {
+    canisterId : ?Text;
+    category : AppCategory__652953406;
+    description : Text;
+    icon : Text;
+    id : Nat;
+    launchType : LaunchType__568962861;
+    name : Text;
+    permissions : [Text];
+    requiresAuth : Bool;
+    url : Text;
+    version : Text
+  };
+type AppRegistryEntry__819684654 =
+  {
+    canisterId : ?Text;
+    category : AppCategory__146131558;
+    description : Text;
+    icon : Text;
+    id : Nat;
+    launchType : LaunchType__230815402;
+    name : Text;
+    permissions : [Text];
+    requiresAuth : Bool;
+    url : Text;
+    version : Text
+  };
+type AppsState__705644344 =
+  {
+    var dock : Dock__930734212;
+    folders : Map__230067015<Nat, HomeFolder__567034645>;
+    installed : Map__230067015<Nat, InstalledApp__470532204>;
+    var nextFolderId : Nat;
+    var nextInstalledId : Nat;
+    var nextRegistryId : Nat;
+    var nextShortcutId : Nat;
+    registry : Map__230067015<Nat, AppRegistryEntry__334738331>;
+    shortcuts : Map__230067015<Nat, Shortcut__244294924>
+  };
+type AppsState__778082583 =
+  {
+    var dock : Dock__603594416;
+    folders : Map__230067015<Nat, HomeFolder__899058989>;
+    installed : Map__230067015<Nat, InstalledApp__471686858>;
+    var nextFolderId : Nat;
+    var nextInstalledId : Nat;
+    var nextRegistryId : Nat;
+    registry : Map__230067015<Nat, AppRegistryEntry__266468038>
+  };
+type AppsState__904005214 =
+  {
+    var dock : Dock__639858060;
+    folders : Map__230067015<Nat, HomeFolder__760440610>;
+    installed : Map__230067015<Nat, InstalledApp__271703744>;
+    var nextFolderId : Nat;
+    var nextInstalledId : Nat;
+    var nextRegistryId : Nat;
+    var nextShortcutId : Nat;
+    registry : Map__230067015<Nat, AppRegistryEntry__819684654>;
+    shortcuts : Map__230067015<Nat, Shortcut__938918033>
+  };
+type AppsState__965962279 =
+  {
+    var dock : Dock__526576450;
+    folders : Map__230067015<Nat, HomeFolder__173137850>;
+    installed : Map__230067015<Nat, InstalledApp__770139929>;
+    var nextFolderId : Nat;
+    var nextInstalledId : Nat;
+    var nextRegistryId : Nat;
+    var nextShortcutId : Nat;
+    registry : Map__230067015<Nat, AppRegistryEntry__496593975>;
+    shortcuts : Map__230067015<Nat, Shortcut__859820796>
+  };
+type AppsState__978781043 =
+  {
+    var dock : Dock__430554678;
+    folders : Map__230067015<Nat, HomeFolder__449718358>;
+    installed : Map__230067015<Nat, InstalledApp__861398608>;
+    var nextFolderId : Nat;
+    var nextInstalledId : Nat;
+    var nextRegistryId : Nat;
+    registry : Map__230067015<Nat, AppRegistryEntry__561136378>
+  };
+type BugReport__10455347 =
+  {
+    category : ?Text;
+    createdAt : Int;
+    description : Text;
+    id : Nat;
+    reporter : Principal;
+    status : ReportStatus__525422494;
+    summary : ?Text;
+    updatedAt : Int
+  };
+type BugReport__131991999 =
+  {
+    category : ?Text;
+    createdAt : Int;
+    description : Text;
+    id : Nat;
+    reporter : Principal;
+    status : ReportStatus__1054476409;
+    summary : ?Text;
+    updatedAt : Int
+  };
+type BugReport__529256211 =
+  {
+    category : ?Text;
+    createdAt : Int;
+    description : Text;
+    id : Nat;
+    reporter : Principal;
+    status : ReportStatus__293360674;
+    summary : ?Text;
+    updatedAt : Int
+  };
+type BugReport__607373850 = BugReport__874834136;
+type BugReport__874834136 =
+  {
+    category : ?Text;
+    createdAt : Timestamp__620789394;
+    description : Text;
+    id : Id__127491343;
+    reporter : UserId__186832750;
+    status : ReportStatus__445058036;
+    summary : ?Text;
+    updatedAt : Timestamp__620789394
+  };
+type BugReport__925482889 =
+  {
+    category : ?Text;
+    createdAt : Int;
+    description : Text;
+    id : Nat;
+    reporter : Principal;
+    status : ReportStatus__551098275;
+    summary : ?Text;
+    updatedAt : Int
+  };
+type CalcEntry__1066786203 =
+  {createdAt : Int; expression : Text; id : Nat; result : Text};
+type CalcEntry__345117603 =
+  {
+    createdAt : Timestamp__777242606;
+    expression : Text;
+    id : Id__745631151;
+    result : Text
+  };
+type CalcEntry__398934171 = CalcEntry__345117603;
+type CalcEntry__523189254 =
+  {createdAt : Int; expression : Text; id : Nat; result : Text};
+type CalcEntry__674277413 =
+  {createdAt : Int; expression : Text; id : Nat; result : Text};
+type CalcEntry__777129621 =
+  {createdAt : Int; expression : Text; id : Nat; result : Text};
+type CalcEntry__936848071 =
+  {createdAt : Int; expression : Text; id : Nat; result : Text};
+type CalculatorState__123523518 =
+  {history : Map__230067015<Nat, CalcEntry__523189254>; var nextId : Nat};
+type CalculatorState__334311102 =
+  {history : Map__230067015<Nat, CalcEntry__1066786203>; var nextId : Nat};
+type CalculatorState__351735038 =
+  {history : Map__230067015<Nat, CalcEntry__936848071>; var nextId : Nat};
+type CalculatorState__408890041 =
+  {history : Map__230067015<Nat, CalcEntry__777129621>; var nextId : Nat};
+type CalculatorState__65669739 =
+  {history : Map__230067015<Nat, CalcEntry__674277413>; var nextId : Nat};
+type Data__44217153<K, V> = {var count : Nat__227979830; kvs : [var ?(K, V)]};
+type Dock__173470645 = Dock__715896853;
+type Dock__430554678 = {appIds : [Nat]};
+type Dock__526576450 = {appIds : [Nat]};
+type Dock__603594416 = {appIds : [Nat]};
+type Dock__639858060 = {appIds : [Nat]};
+type Dock__715896853 = {appIds : [Id__197737761]};
+type Dock__930734212 = {appIds : [Nat]};
+type ExternalBlob__220559234 = Blob;
+type FileEntry__1051341096 =
+  {
+    createdAt : Int;
+    id : Nat;
+    name : Text;
+    parentId : ?Nat;
+    ref : FileRef__1048433573;
+    section : StorageSection__116979272;
+    updatedAt : Int
+  };
+type FileEntry__208623571 =
+  {
+    createdAt : Int;
+    id : Nat;
+    name : Text;
+    parentId : ?Nat;
+    ref : FileRef__313099153;
+    section : StorageSection__543377527;
+    updatedAt : Int
+  };
+type FileEntry__210517254 =
+  {
+    createdAt : Int;
+    id : Nat;
+    name : Text;
+    parentId : ?Nat;
+    ref : FileRef__967446873;
+    section : StorageSection__93331971;
+    updatedAt : Int
+  };
+type FileEntry__321694356 =
+  {
+    createdAt : Int;
+    id : Nat;
+    name : Text;
+    parentId : ?Nat;
+    ref : FileRef__438227692;
+    section : StorageSection__928999545;
+    updatedAt : Int
+  };
+type FileEntry__396904133 =
+  {
+    createdAt : Timestamp__230462451;
+    id : Id__672788065;
+    name : Text;
+    parentId : ?Id__672788065;
+    ref : FileRef__696260420;
+    section : StorageSection__627592384;
+    updatedAt : Timestamp__230462451
+  };
+type FileEntry__804465330 = FileEntry__396904133;
+type FileEntry__990807842 =
+  {
+    createdAt : Int;
+    id : Nat;
+    name : Text;
+    parentId : ?Nat;
+    ref : FileRef__466254849;
+    section : StorageSection__956147873;
+    updatedAt : Int
+  };
+type FileRef__1028287224 = FileRef__939992998;
+type FileRef__1048433573 =
+  {blob : Blob; filename : Text; mimeType : ?Text; sizeBytes : ?Nat};
+type FileRef__313099153 =
+  {blob : Blob; filename : Text; mimeType : ?Text; sizeBytes : ?Nat};
+type FileRef__438227692 =
+  {blob : Blob; filename : Text; mimeType : ?Text; sizeBytes : ?Nat};
+type FileRef__466254849 =
+  {blob : Blob; filename : Text; mimeType : ?Text; sizeBytes : ?Nat};
+type FileRef__696260420 = FileRef__939992998;
+type FileRef__939992998 =
+  {
+    blob : ExternalBlob__220559234;
+    filename : Text;
+    mimeType : ?Text;
+    sizeBytes : ?Nat
+  };
+type FileRef__967446873 =
+  {blob : Blob; filename : Text; mimeType : ?Text; sizeBytes : ?Nat};
+type FilesState__117850819 =
+  {
+    files : Map__230067015<Nat, FileEntry__1051341096>;
+    folders : Map__230067015<Nat, Folder__393127729>;
+    var nextFileId : Nat;
+    var nextFolderId : Nat
+  };
+type FilesState__260532547 =
+  {
+    files : Map__230067015<Nat, FileEntry__321694356>;
+    folders : Map__230067015<Nat, Folder__33205285>;
+    var nextFileId : Nat;
+    var nextFolderId : Nat
+  };
+type FilesState__300257277 =
+  {
+    files : Map__230067015<Nat, FileEntry__210517254>;
+    folders : Map__230067015<Nat, Folder__774020228>;
+    var nextFileId : Nat;
+    var nextFolderId : Nat
+  };
+type FilesState__630893568 =
+  {
+    files : Map__230067015<Nat, FileEntry__990807842>;
+    folders : Map__230067015<Nat, Folder__549518607>;
+    var nextFileId : Nat;
+    var nextFolderId : Nat
+  };
+type FilesState__747553510 =
+  {
+    files : Map__230067015<Nat, FileEntry__208623571>;
+    folders : Map__230067015<Nat, Folder__675787243>;
+    var nextFileId : Nat;
+    var nextFolderId : Nat
+  };
+type Folder__33205285 =
+  {
+    createdAt : Int;
+    id : Nat;
+    name : Text;
+    parentId : ?Nat;
+    section : StorageSection__928999545;
+    updatedAt : Int
+  };
+type Folder__393127729 =
+  {
+    createdAt : Int;
+    id : Nat;
+    name : Text;
+    parentId : ?Nat;
+    section : StorageSection__116979272;
+    updatedAt : Int
+  };
+type Folder__549518607 =
+  {
+    createdAt : Int;
+    id : Nat;
+    name : Text;
+    parentId : ?Nat;
+    section : StorageSection__956147873;
+    updatedAt : Int
+  };
+type Folder__551633407 = Folder__635271204;
+type Folder__635271204 =
+  {
+    createdAt : Timestamp__230462451;
+    id : Id__672788065;
+    name : Text;
+    parentId : ?Id__672788065;
+    section : StorageSection__627592384;
+    updatedAt : Timestamp__230462451
+  };
+type Folder__675787243 =
+  {
+    createdAt : Int;
+    id : Nat;
+    name : Text;
+    parentId : ?Nat;
+    section : StorageSection__543377527;
+    updatedAt : Int
+  };
+type Folder__774020228 =
+  {
+    createdAt : Int;
+    id : Nat;
+    name : Text;
+    parentId : ?Nat;
+    section : StorageSection__93331971;
+    updatedAt : Int
+  };
+type HomeFolder__173137850 =
+  {createdAt : Int; id : Nat; name : Text; position : Nat};
+type HomeFolder__449718358 =
+  {createdAt : Int; id : Nat; name : Text; position : Nat};
+type HomeFolder__51929944 = HomeFolder__556721413;
+type HomeFolder__556721413 =
+  {
+    createdAt : Timestamp__364205147;
+    id : Id__197737761;
+    name : Text;
+    position : Nat
+  };
+type HomeFolder__567034645 =
+  {createdAt : Int; id : Nat; name : Text; position : Nat};
+type HomeFolder__760440610 =
+  {createdAt : Int; id : Nat; name : Text; position : Nat};
+type HomeFolder__899058989 =
+  {createdAt : Int; id : Nat; name : Text; position : Nat};
+type Id__108373731 = Id__389469852;
+type Id__127491343 = Id__389469852;
+type Id__197737761 = Id__389469852;
+type Id__389469852 = Nat;
+type Id__672788065 = Id__389469852;
+type Id__745631151 = Id__389469852;
+type Id__821364657 = Id__127491343;
+type InstalledApp__202285324 =
+  {
+    appId : Id__197737761;
+    favourite : Bool;
+    folderId : ?Id__197737761;
+    id : Id__197737761;
+    installedAt : Timestamp__364205147;
+    position : Nat
+  };
+type InstalledApp__271703744 =
+  {
+    appId : Nat;
+    favourite : Bool;
+    folderId : ?Nat;
+    id : Nat;
+    installedAt : Int;
+    position : Nat
+  };
+type InstalledApp__470532204 =
+  {
+    appId : Nat;
+    favourite : Bool;
+    folderId : ?Nat;
+    id : Nat;
+    installedAt : Int;
+    position : Nat
+  };
+type InstalledApp__471686858 =
+  {
+    appId : Nat;
+    favourite : Bool;
+    folderId : ?Nat;
+    id : Nat;
+    installedAt : Int;
+    position : Nat
+  };
+type InstalledApp__770139929 =
+  {
+    appId : Nat;
+    favourite : Bool;
+    folderId : ?Nat;
+    id : Nat;
+    installedAt : Int;
+    position : Nat
+  };
+type InstalledApp__833514229 = InstalledApp__202285324;
+type InstalledApp__861398608 =
+  {
+    appId : Nat;
+    favourite : Bool;
+    folderId : ?Nat;
+    id : Nat;
+    installedAt : Int;
+    position : Nat
+  };
+type Internal__283199666<K, V> =
+  {children : [var ?Node__204828119<K, V>]; data : Data__44217153<K, V>};
+type LaunchType__230815402 =
+  {#comingSoon; #externalWeb; #icpService; #native};
+type LaunchType__328084765 =
+  {#comingSoon; #externalWeb; #icpService; #native};
+type LaunchType__363961932 =
+  {#comingSoon; #externalWeb; #icpService; #native};
+type LaunchType__564544967 =
+  {#comingSoon; #externalWeb; #icpService; #native};
+type LaunchType__568962861 =
+  {#comingSoon; #externalWeb; #icpService; #native};
+type LaunchType__70010692 = {#comingSoon; #externalWeb; #icpService; #native};
+type Leaf__598469445<K, V> = {data : Data__44217153<K, V>};
+type Map__230067015<K, V> = Map__405889023<K, V>;
+type Map__405889023<K, V> = Map__603270868<K, V>;
+type Map__603270868<K, V> =
+  {var root : Node__204828119<K, V>; var size : Nat__227979830};
+type Nat__227979830 = Nat__920180692;
+type Nat__920180692 = Nat;
+type NewActor__116388240 =
+  {
+    accessControlState : AccessControlState__201339279;
+    appsStates : Map__230067015<Principal, AppsState__904005214>;
+    calcStates : Map__230067015<Principal, CalculatorState__334311102>;
+    filesStates : Map__230067015<Principal, FilesState__630893568>;
+    notesStates : Map__230067015<Principal, NotesState__240668111>;
+    reportsState : ReportsState__519353760;
+    settingsStates : Map__230067015<Principal, SettingsState__1073268200>
+  };
+type NewActor__240851512 =
+  {
+    accessControlState : AccessControlState__201339279;
+    appsStates : Map__230067015<Principal, AppsState__965962279>;
+    calcStates : Map__230067015<Principal, CalculatorState__408890041>;
+    filesStates : Map__230067015<Principal, FilesState__300257277>;
+    notesStates : Map__230067015<Principal, NotesState__269577675>;
+    reportsState : ReportsState__962319162;
+    settingsStates : Map__230067015<Principal, NewSettingsState__517106569>
+  };
+type NewActor__385504705 =
+  {
+    accessControlState : AccessControlState__201339279;
+    appsStates : Map__230067015<Principal, NewAppsState__986749638>;
+    calcStates : Map__230067015<Principal, CalculatorState__351735038>;
+    filesStates : Map__230067015<Principal, FilesState__747553510>;
+    notesStates : Map__230067015<Principal, NotesState__647542566>;
+    reportsState : ReportsState__436070496;
+    settingsStates : Map__230067015<Principal, SettingsState__503183326>
+  };
+type NewActor__763229065 =
+  {
+    accessControlState : AccessControlState__201339279;
+    appsStates : Map__230067015<Principal, AppsState__705644344>;
+    calcStates : Map__230067015<Principal, CalculatorState__123523518>;
+    filesStates : Map__230067015<Principal, FilesState__260532547>;
+    notesStates : Map__230067015<Principal, NotesState__259643211>;
+    reportsState : ReportsState__382448281;
+    settingsStates : Map__230067015<Principal, SettingsState__370497927>
+  };
+type NewActor__769816496 =
+  {
+    accessControlState : AccessControlState__201339279;
+    appsStates : Map__230067015<Principal, AppsState__978781043>;
+    calcStates : Map__230067015<Principal, CalculatorState__65669739>;
+    filesStates : Map__230067015<Principal, FilesState__117850819>;
+    notesStates : Map__230067015<Principal, NotesState__707227182>;
+    settingsStates : Map__230067015<Principal, SettingsState__61619870>
+  };
+type NewAppsState__986749638 =
+  {
+    var dock : Dock__603594416;
+    folders : Map__230067015<Nat, HomeFolder__899058989>;
+    installed : Map__230067015<Nat, InstalledApp__471686858>;
+    var nextFolderId : Nat;
+    var nextInstalledId : Nat;
+    var nextRegistryId : Nat;
+    var nextShortcutId : Nat;
+    registry : Map__230067015<Nat, AppRegistryEntry__266468038>;
+    shortcuts : Map__230067015<Nat, Shortcut__211668956>
+  };
+type NewSettingsState__517106569 =
+  {settings : Map__230067015<Principal, NewUserSettings__815626074>};
+type NewUserSettings__815626074 =
+  {
+    gridSize : Nat;
+    reduceMotion : Bool;
+    theme : Text;
+    updatedAt : Int;
+    wallpaper : Text;
+    wallpaperEnabled : Bool
+  };
+type Node__204828119<K, V> =
+  {#internal : Internal__283199666<K, V>; #leaf : Leaf__598469445<K, V>};
+type NoteFolder__320373887 = NoteFolder__706756924;
+type NoteFolder__322437566 =
+  {createdAt : Int; id : Nat; name : Text; updatedAt : Int};
+type NoteFolder__354069535 =
+  {createdAt : Int; id : Nat; name : Text; updatedAt : Int};
+type NoteFolder__425731111 =
+  {createdAt : Int; id : Nat; name : Text; updatedAt : Int};
+type NoteFolder__454657409 =
+  {createdAt : Int; id : Nat; name : Text; updatedAt : Int};
+type NoteFolder__684225531 =
+  {createdAt : Int; id : Nat; name : Text; updatedAt : Int};
+type NoteFolder__706756924 =
+  {
+    createdAt : Timestamp__354304526;
+    id : Id__108373731;
+    name : Text;
+    updatedAt : Timestamp__354304526
+  };
+type Note__1011762570 =
+  {
+    attachments : [FileRef__967446873];
+    body : Text;
+    createdAt : Int;
+    folderId : ?Nat;
+    id : Nat;
+    pinned : Bool;
+    title : Text;
+    updatedAt : Int
+  };
+type Note__1063160515 =
+  {
+    attachments : [FileRef__1028287224];
+    body : Text;
+    createdAt : Timestamp__354304526;
+    folderId : ?Id__108373731;
+    id : Id__108373731;
+    pinned : Bool;
+    title : Text;
+    updatedAt : Timestamp__354304526
+  };
+type Note__413179631 =
+  {
+    attachments : [FileRef__1048433573];
+    body : Text;
+    createdAt : Int;
+    folderId : ?Nat;
+    id : Nat;
+    pinned : Bool;
+    title : Text;
+    updatedAt : Int
+  };
+type Note__432456088 =
+  {
+    attachments : [FileRef__313099153];
+    body : Text;
+    createdAt : Int;
+    folderId : ?Nat;
+    id : Nat;
+    pinned : Bool;
+    title : Text;
+    updatedAt : Int
+  };
+type Note__471960754 =
+  {
+    attachments : [FileRef__438227692];
+    body : Text;
+    createdAt : Int;
+    folderId : ?Nat;
+    id : Nat;
+    pinned : Bool;
+    title : Text;
+    updatedAt : Int
+  };
+type Note__641183515 = Note__1063160515;
+type Note__954810391 =
+  {
+    attachments : [FileRef__466254849];
+    body : Text;
+    createdAt : Int;
+    folderId : ?Nat;
+    id : Nat;
+    pinned : Bool;
+    title : Text;
+    updatedAt : Int
+  };
+type NotesState__240668111 =
+  {
+    folders : Map__230067015<Nat, NoteFolder__454657409>;
+    var nextFolderId : Nat;
+    var nextNoteId : Nat;
+    notes : Map__230067015<Nat, Note__954810391>
+  };
+type NotesState__259643211 =
+  {
+    folders : Map__230067015<Nat, NoteFolder__684225531>;
+    var nextFolderId : Nat;
+    var nextNoteId : Nat;
+    notes : Map__230067015<Nat, Note__471960754>
+  };
+type NotesState__269577675 =
+  {
+    folders : Map__230067015<Nat, NoteFolder__354069535>;
+    var nextFolderId : Nat;
+    var nextNoteId : Nat;
+    notes : Map__230067015<Nat, Note__1011762570>
+  };
+type NotesState__647542566 =
+  {
+    folders : Map__230067015<Nat, NoteFolder__425731111>;
+    var nextFolderId : Nat;
+    var nextNoteId : Nat;
+    notes : Map__230067015<Nat, Note__432456088>
+  };
+type NotesState__707227182 =
+  {
+    folders : Map__230067015<Nat, NoteFolder__322437566>;
+    var nextFolderId : Nat;
+    var nextNoteId : Nat;
+    notes : Map__230067015<Nat, Note__413179631>
+  };
+type OldActor__110056000 =
+  {
+    accessControlState : AccessControlState__201339279;
+    appsStates : Map__230067015<Principal, AppsState__778082583>;
+    calcStates : Map__230067015<Principal, CalculatorState__351735038>;
+    filesStates : Map__230067015<Principal, FilesState__747553510>;
+    notesStates : Map__230067015<Principal, NotesState__647542566>;
+    settingsStates : Map__230067015<Principal, SettingsState__503183326>
+  };
+type OldActor__152252863 =
+  {
+    accessControlState : AccessControlState__201339279;
+    appsStates : Map__230067015<Principal, AppsState__904005214>;
+    calcStates : Map__230067015<Principal, CalculatorState__334311102>;
+    filesStates : Map__230067015<Principal, FilesState__630893568>;
+    notesStates : Map__230067015<Principal, NotesState__240668111>;
+    reportsState : ReportsState__519353760;
+    settingsStates : Map__230067015<Principal, SettingsState__1073268200>
+  };
+type OldActor__410646494 =
+  {
+    accessControlState : AccessControlState__201339279;
+    appsStates : Map__230067015<Principal, AppsState__965962279>;
+    calcStates : Map__230067015<Principal, CalculatorState__408890041>;
+    filesStates : Map__230067015<Principal, FilesState__300257277>;
+    notesStates : Map__230067015<Principal, NotesState__269577675>;
+    reportsState : ReportsState__962319162;
+    settingsStates : Map__230067015<Principal, OldSettingsState__65329452>
+  };
+type OldActor__512397517 = {};
+type OldActor__520234089 =
+  {
+    accessControlState : AccessControlState__201339279;
+    appsStates : Map__230067015<Principal, AppsState__705644344>;
+    calcStates : Map__230067015<Principal, CalculatorState__123523518>;
+    filesStates : Map__230067015<Principal, FilesState__260532547>;
+    notesStates : Map__230067015<Principal, NotesState__259643211>;
+    reportsState : ReportsState__382448281;
+    settingsStates : Map__230067015<Principal, SettingsState__370497927>
+  };
+type OldSettingsState__65329452 =
+  {settings : Map__230067015<Principal, OldUserSettings__512639724>};
+type OldUserSettings__512639724 =
+  {
+    gridSize : Nat;
+    reduceMotion : Bool;
+    theme : Text;
+    updatedAt : Int;
+    wallpaper : Text
+  };
+type ReportStatus__1054476409 = {#closed; #inProgress; #open; #resolved};
+type ReportStatus__293360674 = {#closed; #inProgress; #open; #resolved};
+type ReportStatus__445058036 = {#closed; #inProgress; #open; #resolved};
+type ReportStatus__525422494 = {#closed; #inProgress; #open; #resolved};
+type ReportStatus__551098275 = {#closed; #inProgress; #open; #resolved};
+type ReportsState__382448281 =
+  {var nextId : Nat; reports : Map__230067015<Nat, BugReport__925482889>};
+type ReportsState__436070496 =
+  {var nextId : Nat; reports : Map__230067015<Nat, BugReport__10455347>};
+type ReportsState__519353760 =
+  {var nextId : Nat; reports : Map__230067015<Nat, BugReport__529256211>};
+type ReportsState__962319162 =
+  {var nextId : Nat; reports : Map__230067015<Nat, BugReport__131991999>};
+type SettingsState__1073268200 =
+  {settings : Map__230067015<Principal, UserSettings__60964073>};
+type SettingsState__370497927 =
+  {settings : Map__230067015<Principal, UserSettings__376862036>};
+type SettingsState__503183326 =
+  {settings : Map__230067015<Principal, UserSettings__666520393>};
+type SettingsState__61619870 =
+  {settings : Map__230067015<Principal, UserSettings__486471207>};
+type Shortcut__178004506 =
+  {
+    createdAt : Timestamp__364205147;
+    favourite : Bool;
+    folderId : ?Id__197737761;
+    icon : Text;
+    id : Id__197737761;
+    launchType : LaunchType__363961932;
+    name : Text;
+    position : Nat;
+    url : Text
+  };
+type Shortcut__211668956 =
+  {
+    createdAt : Int;
+    favourite : Bool;
+    folderId : ?Nat;
+    icon : Text;
+    id : Nat;
+    launchType : LaunchType__328084765;
+    name : Text;
+    position : Nat;
+    url : Text
+  };
+type Shortcut__244294924 =
+  {
+    createdAt : Int;
+    favourite : Bool;
+    folderId : ?Nat;
+    icon : Text;
+    id : Nat;
+    launchType : LaunchType__70010692;
+    name : Text;
+    position : Nat;
+    url : Text
+  };
+type Shortcut__859820796 =
+  {
+    createdAt : Int;
+    favourite : Bool;
+    folderId : ?Nat;
+    icon : Text;
+    id : Nat;
+    launchType : LaunchType__564544967;
+    name : Text;
+    position : Nat;
+    url : Text
+  };
+type Shortcut__938918033 =
+  {
+    createdAt : Int;
+    favourite : Bool;
+    folderId : ?Nat;
+    icon : Text;
+    id : Nat;
+    launchType : LaunchType__230815402;
+    name : Text;
+    position : Nat;
+    url : Text
+  };
+type Shortcut__976064116 = Shortcut__178004506;
+type State__267231247 =
+  {
+    var dock : Dock__173470645;
+    folders : Map__230067015<Nat, HomeFolder__51929944>;
+    installed : Map__230067015<Nat, InstalledApp__833514229>;
+    var nextFolderId : Nat;
+    var nextInstalledId : Nat;
+    var nextRegistryId : Nat;
+    var nextShortcutId : Nat;
+    registry : Map__230067015<Nat, AppRegistryEntry__283610041>;
+    shortcuts : Map__230067015<Nat, Shortcut__976064116>
+  };
+type State__600956376 =
+  {history : Map__230067015<Nat, CalcEntry__398934171>; var nextId : Nat};
+type State__615807929 =
+  {settings : Map__230067015<Principal, UserSettings__412091940>};
+type State__65354252 =
+  {
+    folders : Map__230067015<Nat, NoteFolder__320373887>;
+    var nextFolderId : Nat;
+    var nextNoteId : Nat;
+    notes : Map__230067015<Nat, Note__641183515>
+  };
+type State__957776659 =
+  {
+    files : Map__230067015<Nat, FileEntry__804465330>;
+    folders : Map__230067015<Nat, Folder__551633407>;
+    var nextFileId : Nat;
+    var nextFolderId : Nat
+  };
+type StorageSection__116979272 = {#icpCloud; #local};
+type StorageSection__543377527 = {#icpCloud; #local};
+type StorageSection__627592384 = StorageSection__909957436;
+type StorageSection__909957436 = {#icpCloud; #local};
+type StorageSection__928999545 = {#icpCloud; #local};
+type StorageSection__93331971 = {#icpCloud; #local};
+type StorageSection__956147873 = {#icpCloud; #local};
+type Timestamp__230462451 = Timestamp__301639476;
+type Timestamp__301639476 = Int;
+type Timestamp__354304526 = Timestamp__301639476;
+type Timestamp__364205147 = Timestamp__301639476;
+type Timestamp__620789394 = Timestamp__301639476;
+type Timestamp__641660186 = Timestamp__301639476;
+type Timestamp__777242606 = Timestamp__301639476;
+type UserId__158757552 = Principal;
+type UserId__186832750 = UserId__158757552;
+type UserRole__91647283 = {#admin; #guest; #user};
+type UserSettings__376862036 =
+  {
+    gridSize : Nat;
+    reduceMotion : Bool;
+    theme : Text;
+    updatedAt : Int;
+    wallpaper : Text
+  };
+type UserSettings__412091940 = UserSettings__451559232;
+type UserSettings__451559232 =
+  {
+    gridSize : Nat;
+    reduceMotion : Bool;
+    theme : Text;
+    updatedAt : Timestamp__641660186;
+    wallpaper : Text;
+    wallpaperEnabled : Bool
+  };
+type UserSettings__486471207 =
+  {
+    gridSize : Nat;
+    reduceMotion : Bool;
+    theme : Text;
+    updatedAt : Int;
+    wallpaper : Text
+  };
+type UserSettings__60964073 =
+  {
+    gridSize : Nat;
+    reduceMotion : Bool;
+    theme : Text;
+    updatedAt : Int;
+    wallpaper : Text;
+    wallpaperEnabled : Bool
+  };
+type UserSettings__666520393 =
+  {
+    gridSize : Nat;
+    reduceMotion : Bool;
+    theme : Text;
+    updatedAt : Int;
+    wallpaper : Text
+  };
+{
+  "00000000_000000" : OldActor__512397517 -> NewActor__769816496;
+  "20261020_000000" : (old : OldActor__110056000) -> NewActor__385504705;
+  "20261021_000000" : (old : OldActor__520234089) -> NewActor__763229065;
+  "20261022_000000" : (old : OldActor__410646494) -> NewActor__240851512;
+  "20261023_000000" : (old : OldActor__152252863) -> NewActor__116388240
+}
+actor  {
+  stable accessControlState :
+    {
+      var adminAssigned : Bool;
+      userRoles : Map__230067015<Principal, UserRole__91647283>
+    };
+  stable appsStates :
+    {
+      var root : Node__204828119<Principal, State__267231247>;
+      var size : Nat__227979830
+    };
+  stable calcStates :
+    {
+      var root : Node__204828119<Principal, State__600956376>;
+      var size : Nat__227979830
+    };
+  stable filesStates :
+    {
+      var root : Node__204828119<Principal, State__957776659>;
+      var size : Nat__227979830
+    };
+  stable notesStates :
+    {
+      var root : Node__204828119<Principal, State__65354252>;
+      var size : Nat__227979830
+    };
+  stable reportsState :
+    {
+      var nextId : Id__821364657;
+      reports : Map__230067015<Id__821364657, BugReport__607373850>
+    };
+  stable settingsStates :
+    {
+      var root : Node__204828119<Principal, State__615807929>;
+      var size : Nat__227979830
+    }
+};

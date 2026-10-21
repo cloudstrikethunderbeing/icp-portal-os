@@ -1,0 +1,275 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/assets/fonts/SpaceGrotesk.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Figtree";
+  src: url("/assets/fonts/Figtree.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/assets/fonts/JetBrainsMono.woff2") format("woff2");
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --font-display: "Space Grotesk";
+    --font-body: "Figtree";
+    --font-mono: "JetBrains Mono";
+    --radius: 1rem;
+
+    /* Quiet OS — light mode */
+    --background: 0.985 0.004 250;
+    --foreground: 0.19 0.018 265;
+    --card: 1.0 0.002 250;
+    --card-foreground: 0.19 0.018 265;
+    --popover: 1.0 0.002 250;
+    --popover-foreground: 0.19 0.018 265;
+
+    --primary: 0.55 0.19 258;
+    --primary-foreground: 0.99 0.005 258;
+
+    --secondary: 0.955 0.008 255;
+    --secondary-foreground: 0.28 0.02 265;
+    --muted: 0.955 0.008 255;
+    --muted-foreground: 0.5 0.02 262;
+
+    --accent: 0.72 0.14 205;
+    --accent-foreground: 0.18 0.03 205;
+
+    --destructive: 0.56 0.21 25;
+    --destructive-foreground: 0.99 0.005 25;
+
+    --success: 0.62 0.15 155;
+    --warning: 0.75 0.15 80;
+
+    --border: 0.9 0.008 255;
+    --input: 0.9 0.008 255;
+    --ring: 0.55 0.19 258;
+
+    --chart-1: 0.55 0.19 258;
+    --chart-2: 0.72 0.14 205;
+    --chart-3: 0.62 0.15 155;
+    --chart-4: 0.75 0.15 80;
+    --chart-5: 0.6 0.2 320;
+
+    --sidebar: 0.97 0.006 255;
+    --sidebar-foreground: 0.19 0.018 265;
+    --sidebar-primary: 0.55 0.19 258;
+    --sidebar-primary-foreground: 0.99 0.005 258;
+    --sidebar-accent: 0.93 0.012 255;
+    --sidebar-accent-foreground: 0.28 0.02 265;
+    --sidebar-border: 0.9 0.008 255;
+    --sidebar-ring: 0.55 0.19 258;
+
+    /* Aurora glass + depth tokens */
+    --gradient-primary: linear-gradient(
+      135deg,
+      oklch(0.58 0.19 258),
+      oklch(0.7 0.15 210)
+    );
+    --gradient-subtle: linear-gradient(
+      180deg,
+      oklch(0.99 0.004 250),
+      oklch(0.96 0.008 255)
+    );
+    --surface-glass: oklch(1 0.002 250 / 0.72);
+    --surface-raised: oklch(1 0.002 250 / 0.9);
+    --surface-sheet: oklch(1 0.002 250 / 0.98);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-quick: all 0.16s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Directory + shortcut state language */
+    --state-installed: 0.62 0.15 155;
+    --state-installed-soft: 0.94 0.04 155;
+    --state-available: 0.55 0.19 258;
+    --state-available-soft: 0.94 0.03 258;
+    --state-coming-soon: 0.72 0.13 70;
+    --state-coming-soon-soft: 0.95 0.05 80;
+  }
+
+  .dark {
+    /* Quiet OS — dark mode */
+    --background: 0.16 0.016 265;
+    --foreground: 0.95 0.008 255;
+    --card: 0.2 0.018 265;
+    --card-foreground: 0.95 0.008 255;
+    --popover: 0.23 0.02 265;
+    --popover-foreground: 0.95 0.008 255;
+
+    --primary: 0.7 0.16 258;
+    --primary-foreground: 0.16 0.016 265;
+
+    --secondary: 0.25 0.02 265;
+    --secondary-foreground: 0.86 0.008 255;
+    --muted: 0.25 0.02 265;
+    --muted-foreground: 0.62 0.015 260;
+
+    --accent: 0.76 0.13 205;
+    --accent-foreground: 0.16 0.02 205;
+
+    --destructive: 0.62 0.19 25;
+    --destructive-foreground: 0.95 0.008 25;
+
+    --success: 0.68 0.15 155;
+    --warning: 0.78 0.15 80;
+
+    --border: 0.3 0.02 265;
+    --input: 0.3 0.02 265;
+    --ring: 0.7 0.16 258;
+
+    --chart-1: 0.7 0.16 258;
+    --chart-2: 0.76 0.13 205;
+    --chart-3: 0.68 0.15 155;
+    --chart-4: 0.78 0.15 80;
+    --chart-5: 0.68 0.18 320;
+
+    --sidebar: 0.19 0.018 265;
+    --sidebar-foreground: 0.95 0.008 255;
+    --sidebar-primary: 0.7 0.16 258;
+    --sidebar-primary-foreground: 0.16 0.016 265;
+    --sidebar-accent: 0.25 0.02 265;
+    --sidebar-accent-foreground: 0.86 0.008 255;
+    --sidebar-border: 0.3 0.02 265;
+    --sidebar-ring: 0.7 0.16 258;
+
+    --gradient-primary: linear-gradient(
+      135deg,
+      oklch(0.66 0.16 258),
+      oklch(0.76 0.13 210)
+    );
+    --gradient-subtle: linear-gradient(
+      180deg,
+      oklch(0.18 0.018 265),
+      oklch(0.15 0.016 265)
+    );
+    --surface-glass: oklch(0.22 0.02 265 / 0.7);
+    --surface-raised: oklch(0.24 0.022 265 / 0.9);
+    --surface-sheet: oklch(0.21 0.02 265 / 0.98);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-quick: all 0.16s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Directory + shortcut state language */
+    --state-installed: 0.68 0.15 155;
+    --state-installed-soft: 0.3 0.06 155;
+    --state-installed-foreground: 0.16 0.02 155;
+    --state-available: 0.7 0.16 258;
+    --state-available-soft: 0.3 0.06 258;
+    --state-coming-soon: 0.78 0.13 75;
+    --state-coming-soon-soft: 0.32 0.06 75;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+}
+
+@layer utilities {
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .bg-gradient-primary {
+    background-image: var(--gradient-primary);
+  }
+
+  .bg-gradient-subtle {
+    background-image: var(--gradient-subtle);
+  }
+
+  /* Aurora glass surface — the signature OS material */
+  .surface-glass {
+    background-color: var(--surface-glass);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+  }
+
+  .surface-raised {
+    background-color: var(--surface-raised);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+  }
+
+  /* Sheet surface — opaque enough for forms, still softly layered */
+  .surface-sheet {
+    background-color: var(--surface-sheet);
+    backdrop-filter: blur(28px) saturate(180%);
+    -webkit-backdrop-filter: blur(28px) saturate(180%);
+  }
+
+  /* Directory / shortcut state pills — tinted, not garish */
+  .pill-installed {
+    background-color: var(--state-installed-soft);
+    color: var(--state-installed);
+  }
+
+  .pill-available {
+    background-color: var(--state-available-soft);
+    color: var(--state-available);
+  }
+
+  .pill-coming-soon {
+    background-color: var(--state-coming-soon-soft);
+    color: var(--state-coming-soon);
+  }
+
+  .transition-quick {
+    transition: var(--transition-quick);
+  }
+
+  /* App icon tile — iOS-like squircle with soft inner light */
+  .app-tile {
+    border-radius: 22%;
+    box-shadow: inset 0 1px 0 0 oklch(1 0 0 / 0.35), 0 8px 20px -6px
+      oklch(0.2 0.02 265 / 0.28);
+  }
+
+  .text-gradient-primary {
+    background-image: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  .safe-top {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+
+  /* Reduce-motion preference — collapses animation and transition durations. */
+  .reduce-motion *,
+  .reduce-motion *::before,
+  .reduce-motion *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Honour the operating-system motion preference, independent of the toggle. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}

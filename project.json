@@ -1,0 +1,21 @@
+{
+  "overview": "ICP Portal is a mobile-first ICP workspace with an iOS-style Home screen, Files, Notes, Calculator, an app directory and settings, backed by per-user private storage.",
+  "features": [
+    "iOS-style Home screen with app grid, folders, favourites, search and a customizable dock",
+    "Files app with folders, upload, preview, rename, move, copy and delete",
+    "Automatic image compression and a per-file upload size limit",
+    "Inline previews for images, PDFs, video, audio, text, JSON, CSV and DOCX",
+    "Notes, Calculator and a curated ICP app directory",
+    "Internet Identity sign-in with a private per-user workspace",
+    "Add-to-home-screen prompt with platform-specific steps"
+  ],
+  "category": "productivity",
+  "tags": [
+    "icp",
+    "workspace",
+    "file-manager",
+    "productivity",
+    "mobile-first"
+  ],
+  "last_updated": "2026-10-20T23:46:15.644Z"
+}
